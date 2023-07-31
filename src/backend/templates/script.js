@@ -26,7 +26,7 @@ function sendData(characterId) {
         body: JSON.stringify(data)
     };
 
-    fetch('/set-character', options)
+    fetch('/ai/set-character', options)
         .then(response => {
             if (response.ok) {
                 console.log('Данные успешно отправлены на сервер.');
