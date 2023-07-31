@@ -9,7 +9,7 @@ from ..configuration import config
 from ..db.db_utils import set_character, get_character_greetings
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="src/backend/templates"))
+app.mount("/ai/static", StaticFiles(directory="src/backend/templates"))
 templates = Jinja2Templates(directory="src/backend/templates")
 
 
