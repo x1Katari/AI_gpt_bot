@@ -12,4 +12,4 @@ RUN poetry install
 
 COPY . .
 
-CMD ["aerich upgrade"]
+# CMD ["aerich upgrade"]
