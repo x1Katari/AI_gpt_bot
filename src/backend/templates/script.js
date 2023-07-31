@@ -28,7 +28,7 @@ function sendData(characterId) {
         body: JSON.stringify(data)
     };
 
-    fetch('/ai/set-character', options)
+    fetch(`/ai/set-character&${window.Telegram.WebApp.initDataUnsafe.user.id}&${characterId}`, options)
         .then(response => {
             if (response.ok) {
                 console.log('Данные успешно отправлены на сервер.');
