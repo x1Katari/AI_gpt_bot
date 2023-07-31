@@ -13,31 +13,6 @@ function sendData(characterId) {
             'Content-Type': 'application/json'
         },
 });
-    
-    // const data = {
-    //     user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
-    //     character_id: characterId
-    // };
-
-    // const options = {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    // };
-
-    // fetch(`/ai/set-character`, options)
-    //     .then(response => {
-    //         if (response.ok) {
-    //             console.log('Данные успешно отправлены на сервер.');
-    //         } else {
-    //             console.error('Ошибка при отправке данных на сервер:', response.status);
-    //         }
-    //     })
-    //     .catch(error => {
-    //         console.error('Ошибка при выполнении запроса:', error);
-    //     });
     window.Telegram.WebApp.close()
 }
 
