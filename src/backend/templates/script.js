@@ -7,7 +7,7 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 function sendData(characterId) {
-    fetch(`/set-character?character_id=${characterId}&user_id=${window.Telegram.WebApp.initDataUnsafe.user.id}`, {
+    fetch(`/ai/set-character?character_id=${characterId}&user_id=${window.Telegram.WebApp.initDataUnsafe.user.id}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
