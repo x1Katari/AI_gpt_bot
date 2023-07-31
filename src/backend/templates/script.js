@@ -7,14 +7,16 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 // Обработка данных от бота при запуске приложения
-const initData = window.Telegram.WebApp.initData
+// const initData = window.Telegram.WebApp.initData
 
-let user_id;
+// let user_id;
+
+// window.Telegram.WebApp.initDataUnsafe.user.id
 
 // Функция для отправки данных на сервер
 function sendData(characterId) {
     const data = {
-        user_id: user_id,
+        user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
         character_id: characterId
     };
 
