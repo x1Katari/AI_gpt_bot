@@ -13,13 +13,13 @@ app.mount("/static", StaticFiles(directory="src/backend/templates"))
 templates = Jinja2Templates(directory="src/backend/templates")
 
 
-@app.get('/choose-character', response_class=HTMLResponse)
+@app.get('/ai/choose-character', response_class=HTMLResponse)
 async def choose_character(request: Request):
     print(request.url)
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.post('/set-character')
+@app.post('/ai/set-character')
 async def set_character_endpoint(character_id: int, user_id: int):
     try:
         await set_character(user_id=user_id, character_id=character_id)
