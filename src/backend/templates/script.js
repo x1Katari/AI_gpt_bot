@@ -37,6 +37,7 @@ function sendData(characterId) {
         .catch(error => {
             console.error('Ошибка при выполнении запроса:', error);
         });
+    window.Telegram.WebApp.close()
 }
 
 if (initData) {
