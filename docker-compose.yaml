@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  ai_db:
+    container_name: ai_db
+    image: postgres:alpine
+    restart: always
+    ports:
+      - "5430:5432"
+    env_file:
+      - .env
+
+  ai_app:
+    container_name: ai_app
+    build: .
+    command: /bin/bash -c "uvicorn src.backend.app:app --host=0.0.0.0 --port=8001 --reload"
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8001"
+    depends_on:
+      - ai_db
+
+  ai_bot:
+    container_name: ai_bot
+    build: .
+    command: /bin/bash -c "python3 src/__main__.py"
+    volumes:
+      - .:/app
+    depends_on:
+      - ai_app
