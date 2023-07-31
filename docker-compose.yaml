@@ -23,7 +23,7 @@ services:
   ai_bot:
     container_name: ai_bot
     build: .
-    command: /bin/bash -c "python3 src/__main__.py"
+    command: /bin/bash -c "aerich upgrade && python3 src/__main__.py"
     volumes:
       - .:/app
     depends_on:
