@@ -84,7 +84,9 @@ async def save_message(user_id, character_id, message, from_user=False):
 
 
 async def get_messages(user_id: int, character_id: int) -> str:
-    dialog = await Dialog.get_or_none(user_id=user_id, character_id=character_id)
+    user = await User.get(id=user_id)
+    character = await Character.get(id=character_id)
+    dialog = await Dialog.get(user_id=user, character_id=character)
     if dialog:
         return dialog.messages
     else:
